@@ -9,6 +9,7 @@ Aplikasi PHP untuk mengelola dan menghitung properti bangun datar (Persegi, Pers
 - [Persyaratan](#persyaratan)
 - [Instalasi](#instalasi)
 - [Penggunaan Fitur](#penggunaan-fitur)
+- [Class Diagram (PlantUML)](#class-diagram-plantuml)
 - [Dokumentasi API (phpDocumentor)](#dokumentasi-api-phpdocumentor)
 - [Unit Testing (PestPHP)](#unit-testing-pestphp)
 
@@ -103,6 +104,42 @@ Buka halaman utama — semua data yang tersimpan di database ditampilkan dalam t
 **Menghapus data**
 
 Klik tombol **Hapus** pada baris yang ingin dihapus.
+
+---
+
+## Class Diagram (PlantUML)
+
+File diagram kelas tersedia di `uml/class-diagram.puml` dan menggambarkan hubungan antar kelas pada `src/Models/`.
+
+### Struktur Pewarisan
+
+```
+InterfaceHitung
+      ▲
+      │
+ BangunDatar
+      ▲
+   ┌──┼──────────────┐
+   │                 │                  │
+Persegi     PersegiPanjang         Lingkaran
+```
+
+### Cara Render Diagram
+
+**1. VS Code**
+
+Install extension [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml), buka file `uml/class-diagram.puml`, lalu tekan `Alt+D` untuk preview.
+
+**2. Online**
+
+Buka [https://www.plantuml.com/plantuml/uml/](https://www.plantuml.com/plantuml/uml/) lalu paste isi file `uml/class-diagram.puml`.
+
+**3. CLI** (butuh Java + plantuml.jar)
+
+```bash
+java -jar plantuml.jar uml/class-diagram.puml
+# Output: uml/class-diagram.png
+```
 
 ---
 
@@ -264,6 +301,8 @@ project-bangun-datar/
 │           ├── PersegiTest.php
 │           ├── PersegiPanjangTest.php
 │           └── LingkaranTest.php
+├── uml/
+│   └── class-diagram.puml
 ├── docs/              ← hasil generate phpDocumentor
 ├── database.sql
 ├── composer.json
