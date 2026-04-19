@@ -1,0 +1,73 @@
+@startuml class-diagram
+
+title Bangun Datar - Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+skinparam classBackgroundColor #FEFEFE
+skinparam classBorderColor #333333
+skinparam arrowColor #333333
+skinparam linetype ortho
+
+package "App\\Models" {
+
+    class InterfaceHitung {
+        + hitungLuas() : float|int
+        + hitungKeliling() : float|int
+    }
+
+    class BangunDatar {
+        # namaBangunDatar : string
+        --
+        + getNamaBangunDatar() : string
+    }
+
+    class Persegi {
+        - sisi : float|int
+        --
+        + __construct(sisi : float|int = 5)
+        + hitungLuas() : float|int
+        + hitungKeliling() : float|int
+    }
+
+    class PersegiPanjang {
+        - panjang : float|int
+        - lebar : float|int
+        --
+        + __construct(panjang : float|int = 7, lebar : float|int = 4)
+        + hitungLuas() : float|int
+        + hitungKeliling() : float|int
+    }
+
+    class Lingkaran {
+        - jariJari : float|int
+        --
+        + __construct(jariJari : float|int = 3)
+        + hitungLuas() : float
+        + hitungKeliling() : float
+    }
+
+    InterfaceHitung <|-- BangunDatar
+
+    BangunDatar <|-- Persegi     
+    BangunDatar <|-- PersegiPanjang
+    BangunDatar <|-- Lingkaran      
+
+}
+
+note right of Persegi
+    Luas     = sisi × sisi
+    Keliling = 4 × sisi
+end note
+
+note right of PersegiPanjang
+    Luas     = panjang × lebar
+    Keliling = 2 × (panjang + lebar)
+end note
+
+note right of Lingkaran
+    Luas     = π × r²
+    Keliling = 2 × π × r
+end note
+
+@enduml
