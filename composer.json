@@ -1,0 +1,17 @@
+{
+    "name": "aldhi/bangun-datar",
+    "description": "Project Bangun Datar",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aldhi Xar",
+            "email": "aldhi.x@gmail.com"
+        }
+    ],
+    "require": {}
+}

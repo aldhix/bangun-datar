@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer dump-autoload *)",
+      "Bash(composer install *)",
+      "Bash(./vendor/bin/pest --init)",
+      "Bash(./vendor/bin/pest)"
+    ]
+  }
+}
