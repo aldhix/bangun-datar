@@ -4,7 +4,11 @@
       "Bash(composer dump-autoload *)",
       "Bash(composer install *)",
       "Bash(./vendor/bin/pest --init)",
-      "Bash(./vendor/bin/pest)"
+      "Bash(./vendor/bin/pest)",
+      "Bash(./vendor/bin/pest tests/Unit)",
+      "Bash(composer require *)",
+      "Bash(curl -L https://phpdoc.org/phpDocumentor.phar -o phpDocumentor.phar)",
+      "Bash(php phpDocumentor.phar run -d src/Models -t docs --title \"Bangun Datar - Model API\")"
     ]
   }
 }
